@@ -32,23 +32,26 @@ pip install pydub
 ```
 
 Ensure you have ffmpeg installed:
-
+```bash
 On Ubuntu:
+```
+```bash
 sudo apt-get install ffmpeg
-sudo apt-get install ffmpeg
+```
 On macOS using Homebrew:
-bash
-Copiar código
+```bash
 brew install ffmpeg
+```
+
 On Windows, download and install ffmpeg from ffmpeg.org and add it to your system PATH.
 Usage
 Place all your .waptt.opus audio files in the input_audio_files directory.
 
 Run the script:
 
-bash
-Copiar código
+```bash
 python main.py
+
 The concatenated audio will be saved as combined_audio.mp3 in the project directory.
 
 Example
