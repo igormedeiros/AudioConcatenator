@@ -1,4 +1,6 @@
 from pydub import AudioSegment
+import librosa
+import soundfile as sf
 import os
 
 # Define the directory containing the audio files
@@ -47,8 +49,21 @@ if files_processed == 0:
     print("No audio files were loaded. Please check the files in the directory.")
     exit(1)
 
-# Export the combined audio as an MP3 file
-output_file = "C:/Users/igor/Projects/AudioConcatenator/combined_audio.mp3"
-combined_audio.export(output_file, format='mp3')
+# Export the combined audio to a temporary WAV file (needed for librosa processing)
+temp_output_file = "C:/Users/igor/Projects/AudioConcatenator/temp_combined_audio.wav"
+combined_audio.export(temp_output_file, format='wav')
 
-print(f"All audio files have been concatenated into {output_file}")
+# Use librosa to load the combined audio file
+y, sr = librosa.load(temp_output_file, sr=None)
+
+# Apply volume normalization (or any other enhancements you want)
+y_normalized = librosa.util.normalize(y)
+
+# Save the enhanced audio back to a final MP3 file
+output_file = "C:/Users/igor/Projects/AudioConcatenator/combined_audio.mp3"
+sf.write(output_file, y_normalized, sr, format='mp3')
+
+print(f"All audio files have been concatenated and enhanced into {output_file}")
+
+# Optionally, remove the temporary WAV file after processing
+os.remove(temp_output_file)
