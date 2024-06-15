@@ -51,32 +51,37 @@ Run the script:
 
 ```bash
 python main.py
+```
 
 The concatenated audio will be saved as combined_audio.mp3 in the project directory.
 
-Example
+## Example
 Suppose you have the following .waptt.opus files in the input_audio_files directory:
 
-Audio WhatsApp 2024-04-30 14.57.37.waptt.opus
-Audio WhatsApp 2024-04-30 19.14.42.waptt.opus
-Audio WhatsApp 2024-05-23 11.40.41.waptt.opus
-Running the script will concatenate these files into a single MP3 file named combined_audio.mp3.
+- Audio WhatsApp 2024-04-30 14.57.37.waptt.opus
+- Audio WhatsApp 2024-04-30 19.14.42.waptt.opus
+- Audio WhatsApp 2024-05-23 11.40.41.waptt.opus
+- Running the script will concatenate these files into a single MP3 file named combined_audio.mp3.
 
-Troubleshooting
+## Troubleshooting
 If you encounter any issues with loading the files or ffmpeg, ensure that:
 
 The ffmpeg executable is properly installed and added to your system PATH.
 The .waptt.opus files are correctly placed in the input_audio_files directory.
-License
+
+## License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
-Contributions
+## Contributions
 Contributions are welcome! Feel free to open issues or submit pull requests.
 
-Happy coding!
+## Happy coding!
 
-markdown
-Copiar código
+### Additional Steps
+
+1. Save the above content in a file named `README.md` in the root directory of your project.
+2. Ensure your directory structure looks like this:
+
 
 ### Additional Steps
 
@@ -93,13 +98,13 @@ AudioConcatenator/
 ├── main.py
 └── README.md
 
-sql
-Copiar código
-
+```bash
 3. Commit your changes to the repository:
 
 ```bash
 git add README.md
 git commit -m "Add README.md"
 git push origin main
+```
+
 This README provides clear instructions on the project's purpose, requirements, installation steps, usage, and troubleshooting, making it easy for others to understand and use your project.
